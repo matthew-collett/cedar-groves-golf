@@ -1,0 +1,41 @@
+<!-- header.ejs -->
+<header class="header" style="background-image: linear-gradient(
+rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('<%= hero_img %>');">
+    <div class="hero-text flex">
+        <h1 class="heading display-5 text-center"><%- hero_title %></h1>
+        <hr class="divider">
+        <h5 class="hero-sub"><%- hero_subtitle %></h5>
+    </div>
+    <div class="nav-area navbar navbar-expand">
+        <nav class="navbar-content container-fluid">
+            <button class="nav-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobile-nav">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+            <a href="/" class="logo flex">
+                <img src="assets/logo.svg" alt="Logo">
+                <span>Cedar Groves</span>
+            </a>
+            <div></div>
+            <div class="navbar-wrapper">
+                <%- include('nav-links.html'); %>
+            </div>
+        </nav>
+    </div>
+    <div class="nav-area offcanvas offcanvas-start" id="mobile-nav">
+        <nav class="container-fluid">
+            <div class="offcanvas-header">
+                <a href="/" class="logo flex">
+                    <img src="assets/logo.svg" alt="Logo">
+                    <span>Cedar Groves</span>
+                </a>
+                <button class="nav-button" type="button" data-bs-dismiss="offcanvas" data-bs-target="#mobile-nav">
+                    <ion-icon size="large" name="close-outline"></ion-icon>
+                </button>
+            </div>
+            <div class="offcanvas-body">
+                <%- include('nav-links.html'); %>
+            </div>
+        </nav>
+    </div>
+</header>
+<script src="scripts/dropdown.js" defer></script>
