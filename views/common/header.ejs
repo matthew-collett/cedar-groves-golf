@@ -2,20 +2,19 @@
 <header class="header" style="background-image: linear-gradient(
 rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('<%= hero_img %>');">
     <div class="hero-text flex">
-        <h1 class="heading display-5 text-center"><%- hero_title %></h1>
+        <h1 class="hero-heading display-4 text-center"><%- hero_title %></h1>
         <hr class="divider">
         <h5 class="hero-sub"><%- hero_subtitle %></h5>
     </div>
     <div class="nav-area navbar navbar-expand">
         <nav class="navbar-content container-fluid">
-            <button class="nav-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobile-nav">
-                <ion-icon name="menu-outline"></ion-icon>
-            </button>
             <a href="/" class="logo flex">
                 <img src="assets/logo.svg" alt="Logo">
                 <span>Cedar Groves</span>
             </a>
-            <div></div>
+            <button class="nav-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobile-nav">
+                <i id="menu-button" class="bi bi-list"></i>
+            </button>
             <div class="navbar-wrapper">
                 <%- include('nav-links.html'); %>
             </div>
@@ -25,11 +24,11 @@ rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('<%= hero_img %>');">
         <nav class="container-fluid">
             <div class="offcanvas-header">
                 <a href="/" class="logo flex">
-                    <img src="assets/logo.svg" alt="Logo">
-                    <span>Cedar Groves</span>
+                    <img src="assets/logo.svg" alt="Logo" style="width: 110px;">
+                    <span style="font-size: 24px;">Cedar Groves</span>
                 </a>
                 <button class="nav-button" type="button" data-bs-dismiss="offcanvas" data-bs-target="#mobile-nav">
-                    <ion-icon size="large" name="close-outline"></ion-icon>
+                    <i id="close-button" class="bi bi-x" style="font-size: 42px;"></i>
                 </button>
             </div>
             <div class="offcanvas-body">
@@ -38,4 +37,29 @@ rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('<%= hero_img %>');">
         </nav>
     </div>
 </header>
+<script>
+    $(document).ready(function () {
+        $("#menu-button").click(function () {
+            $(this).fadeOut(250);
+        });
+        $("#close-button").click(function () {
+            $("#menu-button").fadeIn(250);
+        });
+        $(document).click(function (event) {
+            if (!$(event.target).closest("#mobile-nav").length && $("#menu-button").is(":hidden")) {
+                $("#menu-button").fadeIn(250);
+            }
+        });
+    });
+
+    $(window).scroll(() => {
+        var navbar = $('.navbar');
+        var scroll = $(window).scrollTop();
+        if (scroll >= 48) {
+            navbar.addClass('navbar-sticky');
+        } else {
+            navbar.removeClass('navbar-sticky');
+        }
+    });
+</script>
 <script src="scripts/dropdown.js" defer></script>
