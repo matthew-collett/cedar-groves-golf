@@ -4,6 +4,7 @@
 :root {
     --color-prim: #333333;
     --color-acc: #283927;
+    --color-sec: #e1dbaa;
     --color-main: #fffcf7;
     --color-white: #ffffff;
     --max-width: 1300px;
@@ -14,6 +15,21 @@
     box-sizing: border-box;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+img, picture, svg, video {
+    display: block;
+    width: 100%;
+}
+
+input, textarea, button, select {
+    font: inherit;
+}
+
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
@@ -21,6 +37,7 @@ body {
     font-size: 15px;
     background-color: var(--color-main);
     line-height: 2;
+    min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6, p, hr {
@@ -31,10 +48,6 @@ a {
     text-decoration: none;
     color: var(--color-prim);
     transition: color 0.3s ease-in-out;
-}
-
-img {
-    width: 100%;
 }
 
 /* utilities */
@@ -61,7 +74,10 @@ img {
     margin: auto;
 }
 
-
+.full-bleed {
+    box-shadow: 0 0 0 100vmax var(--color-sec);
+    clip-path: inset(0 -100vmax);
+}
 
 
 
@@ -180,7 +196,6 @@ img {
 
 /* main */
 .main {
-    
     margin: auto;
     background-color: var(--color-main);
 }
@@ -206,9 +221,6 @@ img {
     text-transform: uppercase;
 }
 
-.weather-widget {
-    max-width: 800px;
-}
 
 
 
