@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6, p, hr {
 a {
     text-decoration: none;
     color: var(--color-prim);
-    transition: color 0.3s ease-in-out;
+    transition: color 0.2s ease-in-out;
 }
 
 /* utilities */
@@ -70,7 +70,7 @@ a {
 }
 
 .text-restrict {
-    max-width: calc(var(--max-width) / 2);
+    max-width: calc(var(--max-width) / 1.5);
     margin: auto;
 }
 
@@ -79,6 +79,9 @@ a {
     clip-path: inset(0 -100vmax);
 }
 
+.shadow1 {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
 
 
 
@@ -96,7 +99,7 @@ a {
 
 .nav-area .nav-link {
     color: var(--color-white);
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .nav-area .nav-link:hover {
@@ -203,7 +206,6 @@ a {
 .main-item {
     max-width: calc(var(--max-width) - 200px);
     margin: auto;
-    margin-bottom: 56px;
     padding: 28px 16px;
 }
 
@@ -221,6 +223,36 @@ a {
     text-transform: uppercase;
 }
 
+.review-wrapper {
+    gap: 16px;
+    padding: 8px;
+}   
+
+.review-card {
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1 1 0;
+    background-color: var(--color-white);
+    padding: 24px;
+    border-radius: 4px;
+    height: 325px;
+}
+
+.review-card > p {
+    padding: 8px 0 12px 0;
+    font-weight: 300;
+}
+
+.stars {
+    color: #d4be19;
+    gap: 1px;
+}
+
+
+
+
+
+
 
 
 
@@ -231,6 +263,7 @@ a {
     flex-direction: column;
     background-color: var(--color-acc);
     padding: 8px;
+    margin-top: 48px;
     color: var(--color-main);
 }
 
@@ -266,7 +299,7 @@ a {
 
 .footer-link {
     color: var(--color-main);
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .footer-logo {
@@ -287,7 +320,7 @@ a {
 
 .social-area i {
     color: var(--color-main);
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .social-area i:hover, .footer-link:hover {
@@ -357,6 +390,11 @@ a {
     .navbar-sticky {
         height: 68px;
     }   
+
+    .review-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
 
     .footer {
         align-items: center;

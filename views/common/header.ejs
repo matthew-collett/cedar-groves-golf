@@ -38,11 +38,11 @@ rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('<%= hero_img %>');">
     </div>
 </header>
 <script>
-    $(document).ready(function () {
+    $(document).ready(() => {
         $("#menu-button").click(function () {
             $(this).fadeOut(250);
         });
-        $("#close-button").click(function () {
+        $("#close-button").click(() => {
             $("#menu-button").fadeIn(250);
         });
         $(document).click(function (event) {
@@ -62,4 +62,3 @@ rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('<%= hero_img %>');">
         }
     });
 </script>
-<script src="scripts/dropdown.js" defer></script>
