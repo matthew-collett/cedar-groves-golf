@@ -1,18 +1,18 @@
 <!-- header.ejs -->
-<header class="header" style="background-image: linear-gradient(
+<header class="header background-img" style="background-image: linear-gradient(
 rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('<%= hero_img %>');">
-    <div class="hero-text flex">
-        <h1 class="hero-heading display-4 text-center"><%- hero_title %></h1>
-        <hr class="divider">
-        <h5 class="hero-sub"><%- hero_subtitle %></h5>
+    <div class="hero-text vflex g16">
+        <h1 class="heading display-4 text-center" style="line-height: 1;"><%- hero_title %></h1>
+        <hr class="hero-divider">
+        <h5 style="font-style: italic;"><%- hero_subtitle %></h5>
     </div>
-    <div class="nav-area navbar navbar-expand">
+    <div class="nav-area navbar navbar-expand py-3 transition">
         <nav class="navbar-content container-fluid">
-            <a href="/" class="logo flex">
-                <img src="assets/logo.svg" alt="Logo">
+            <a href="/" class="logo vflex">
+                <img src="assets/logo.svg" alt="Logo" style="width: 150px;">
                 <span>Cedar Groves</span>
             </a>
-            <button class="nav-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobile-nav">
+            <button class="nav-button font-xl" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobile-nav">
                 <i id="menu-button" class="bi bi-list"></i>
             </button>
             <div class="navbar-wrapper">
@@ -23,11 +23,12 @@ rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('<%= hero_img %>');">
     <div class="nav-area offcanvas offcanvas-start" id="mobile-nav">
         <nav class="container-fluid">
             <div class="offcanvas-header">
-                <a href="/" class="logo flex">
+                <a href="/" class="logo vflex">
                     <img src="assets/logo.svg" alt="Logo" style="width: 110px;">
                     <span style="font-size: 24px;">Cedar Groves</span>
                 </a>
-                <button class="nav-button" type="button" data-bs-dismiss="offcanvas" data-bs-target="#mobile-nav">
+                <button class="nav-button font-xl" type="button" data-bs-dismiss="offcanvas"
+                    data-bs-target="#mobile-nav">
                     <i id="close-button" class="bi bi-x" style="font-size: 42px;"></i>
                 </button>
             </div>
@@ -60,5 +61,12 @@ rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('<%= hero_img %>');">
         } else {
             navbar.removeClass('navbar-sticky');
         }
+    });
+
+    $('.dropdown').on('show.bs.dropdown', function () {
+        $(this).find('.dropdown-menu').first().stop(true, true).slideDown(250);
+    });
+    $('.dropdown').on('hide.bs.dropdown', function () {
+        $(this).find('.dropdown-menu').first().stop(true, true).slideUp(250);
     });
 </script>

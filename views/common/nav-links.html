@@ -1,21 +1,27 @@
 <!-- nav-links.html -->
-<ul class="navbar-nav">
+<ul class="navbar-nav g24">
     <li class="nav-item">
-        <a href="/" class="nav-link">Home</a>
+        <a href="/" class="nav-link transition hover">Home</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle transition hover" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">Rates & Fees</a>
+        <ul class="dropdown-menu m-0 p-2 border-rad shadow-1" data-bs-popper="static">
+            <li class="nav-item"><a class="dropdown-item nav-link transition hover font-sm" href="#">Golf</a></li>
+            <li class="nav-item"><a class="dropdown-item nav-link transition hover font-sm" href="#">Driving Range</a></li>
+            <li class="nav-item"><a class="dropdown-item nav-link transition hover font-sm" href="#">Memberships & Passes</a></li>
+        </ul>
     </li>
     <li class="nav-item">
-        <a href="#" class="nav-link">Rates & Fees</a>
+        <a href="#" class="nav-link transition hover">Aerial Tour</a>
     </li>
     <li class="nav-item">
-        <a href="#" class="nav-link">Aerial Tour</a>
+        <a href="#" class="nav-link transition hover">Memberships</a>
     </li>
     <li class="nav-item">
-        <a href="#" class="nav-link">Memberships</a>
+        <a href="faq" class="nav-link transition hover">FAQ</a>
     </li>
     <li class="nav-item">
-        <a href="#" class="nav-link">FAQ</a>
-    </li>
-    <li class="nav-item">
-        <a href="#" class="nav-link">Contact Us</a>
+        <a href="/contact" class="nav-link transition hover">Contact Us</a>
     </li>
 </ul>

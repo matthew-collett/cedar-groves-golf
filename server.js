@@ -18,7 +18,6 @@ app.set('view engine', 'ejs');
 
 app.listen(port, () => {});
 
-/* main page */
 app.get('/', async function (req, res) {
 
     var body = {
@@ -28,4 +27,26 @@ app.get('/', async function (req, res) {
     }
     // render the page 
     res.render(__dirname + '/views/index', body);
+});
+
+app.get('/faq', async function (req, res) {
+
+    var body = {
+        'hero_title': 'Frequently Asked Questions',
+        'hero_subtitle': 'More Information',
+        'hero_img': 'assets/images/drone-14.png'
+    }
+    // render the page 
+    res.render(__dirname + '/views/faq', body);
+});
+
+app.get('/contact', async function (req, res) {
+
+    var body = {
+        'hero_title': 'Contact Us',
+        'hero_subtitle': 'We\'d Love to Hear From You Directly',
+        'hero_img': 'assets/images/drone-12.png'
+    }
+    // render the page 
+    res.render(__dirname + '/views/contact', body);
 });
